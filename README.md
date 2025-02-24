@@ -1,2 +1,3 @@
-###npm i
-###npm run dev
+# Steps
+1. npm install
+2. npm run dev
