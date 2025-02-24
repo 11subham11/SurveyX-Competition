@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 10, 20;
+  --background-end-rgb: 20, 20, 40;
+}
+
+@layer base {
+  :root {
+    --background: 230 25% 5%;
+    --foreground: 210 40% 98%;
+    --card: 230 25% 7%;
+    --card-foreground: 210 40% 98%;
+    --popover: 230 25% 7%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 230 25% 10%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 230 25% 10%;
+    --muted-foreground: 217 10% 64%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 230 25% 15%;
+    --input: 230 25% 15%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 286 91% 60%;
+    --chart-3: 169 91% 60%;
+    --chart-4: 43 91% 60%;
+    --chart-5: 0 91% 60%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.glow {
+  box-shadow: 0 0 20px theme('colors.blue.500/0.5');
+}
+
+.glow-text {
+  text-shadow: 0 0 10px theme('colors.blue.500/0.5');
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.survey-card {
+  backdrop-filter: blur(12px);
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.survey-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px theme('colors.blue.500/0.3');
+}
+
+.testimonial-card {
+  background: linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.interactive-cursor {
+  width: 20px;
+  height: 20px;
+  background: theme('colors.blue.500');
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.2s ease;
+}
+
+.interactive-cursor.active {
+  transform: scale(2);
+}
